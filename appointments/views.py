@@ -20,10 +20,10 @@ class AppointmentView(View):
 
         # Отправляем письмо
         send_mail(
-            subject=f'{appointment.client_name} {appointment.date.strftime("%Y-%m-%d")}',  # Исправлен формат даты
+            subject=f'{appointment.client_name} {appointment.date.strftime("%Y-%m-%d")}',
             message=appointment.message,
             from_email='ruslan7maslianov@yandex.ru',
-            recipient_list=['habay@mail.ru']  # Исправлены кавычки вокруг адреса
+            recipient_list=['habay@mail.ru']  #
         )
 
         return redirect('appointments:appointment_created')  # Заменил на правильный redirect
